@@ -25,6 +25,7 @@ const {login} = useContext(AuthContext)
     <button
       className="btn btn-primary"
       onClick={ onLogin }
+      aria-label="login"
     >
       Login
     </button>

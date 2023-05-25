@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import  queryString  from "query-string";
+import  queryString from "query-string";
 import { useForm } from "../../hooks/useForm"
 import { HeroCard } from "../components/HeroCard"
 import { getHeroesByName } from "../helpers/getHeroesByName";
@@ -39,7 +39,7 @@ export const SearchPage = () => {
         <div className="col-5">
           <h4>Searching</h4>
           <hr />
-          <form onSubmit={ onSearchSubmit }>
+          <form aria-label="form" onSubmit={ onSearchSubmit }>
             <input 
               type="text" 
               placeholder="Search a hero"
@@ -65,12 +65,12 @@ export const SearchPage = () => {
             : ( heroes.length === 0 ) 
               && <div className="alert alert-danger">No hero with <b>{q}</b> </div>
           } */}
-          <div className="alert alert-primary animate__animated animate__fadeIn" 
+          <div aria-label="none" className="alert alert-primary animate__animated animate__fadeIn" 
             style={{ display: showSearch ? '' : 'none'}}>
             Search a hero
           </div>
 
-          <div className="alert alert-danger animate__animated animate__fadeIn" 
+          <div aria-label="error" className="alert alert-danger animate__animated animate__fadeIn" 
             style={{ display: showError ? '' : 'none'}}>
             No hero with <b>{q}</b> 
           </div>
